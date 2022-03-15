@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "InviteCommentDisplay",
+  "description": "Displays the comments somebody left on your profile, when you check your pending invites",
+  "version": "0.1",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://steamcommunity.com/*/friends/pending"
+      ],
+      "js": [
+        "InvitesInjector.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    "ModalHtml.html"
+  ],
+  "background": {
+    "scripts": [
+      "Background.js"
+    ]
+  }
+}
